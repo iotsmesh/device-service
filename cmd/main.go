@@ -1,7 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"github.com/iotsmesh/device-service/internal/db"
+	logger "github.com/iotsmesh/device-service/internal/logger"
+)
 
 func main() {
-	fmt.Println("Hello, Device Services!")
+	if res := db.Migrate(); res {
+		logger.Logger.Info("Database migration is done!")
+	} else {
+		logger.Logger.Info("Database migration is failed!")
+	}
+	logger.Logger.Info("Device Service is started!")
 }
