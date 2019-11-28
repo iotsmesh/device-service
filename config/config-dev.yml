@@ -1,0 +1,6 @@
+database:
+    hostname: localhost
+    port: 5432
+    dbname: devicesvc
+    username: postgres
+    password: postgres
